@@ -1,5 +1,8 @@
 package com.politecnico.strategy;
 
+import com.politecnico.Tipo_Reacciones.EstiloReaccion;
+import com.politecnico.factory_estilo_reaccion.EstiloReaccionFactory;
+
 public class Niño {
     private String nombre;
     private String deseo;
@@ -13,16 +16,8 @@ public class Niño {
     }
 
     public String conseguirDeseo(int intento){
-        if (intento == 1)
-            return "intenta coger " + deseo + " sin que le vean"; //estilo escondido
-        else if (intento == 2)
-            return "dice a un adulto: ¡Quiero " + deseo + "!"; //estilo caprichoso
-        else if (intento == 3)
-            return "pone cara de pena y decir a un adulto " + deseo; //estilo penoso
-        else if (intento == 4)
-            return "llora y grita a un adulto ¡" + deseo + "!"; //estilo griton
-        else
-            return "se va a un rincón a llorar"; //estilo lloron
+        EstiloReaccion estiloReaccion = EstiloReaccionFactory.getEstiloReaccion(intento);
+        return estiloReaccion.responder(deseo);
     }
 
     public String getNombre() {

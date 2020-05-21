@@ -19,13 +19,13 @@ public class App {
         }
 
         System.out.println("-------------------------------------");
-        System.out.println("Elige una estrategia de reaccion:");
+        System.out.println("¿Cuál es la reacción del niño?:");
         System.out.print( "1. Lloron\n" +
                 "2. Escondido\n" +
                 "3. Caprichoso\n" +
                 "4. Penoso\n" +
                 "5. Gritón\n" +
-                "Opción: ");
+                "Opción elegida: ");
         int opcion = lectorTeclado.nextInt();
         System.out.println("------------------------------------");
 
